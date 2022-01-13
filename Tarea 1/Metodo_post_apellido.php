@@ -18,7 +18,7 @@ if($_POST){
     <title>Document</title>
 </head>
 <body>
-<form action="ejercicio5.php" method="post">
+<form action="Metodo_post_apellido.php" method="post">
     Nombre: 
         <input type="text" name="txtNombre" id="">
         <br/>
