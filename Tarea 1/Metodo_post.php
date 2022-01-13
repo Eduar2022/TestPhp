@@ -17,7 +17,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="ejercicio2.php" method="post">
+    <form action="Metodo_post.php" method="post">
     Nombre: 
         <input type="text" name="txtNombre" id="">
         <br/>
