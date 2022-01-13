@@ -26,7 +26,7 @@ if($_POST){
     <title>Document</title>
 </head>
 <body>
-    <form action="Uso_de_condicionales.php" method="post">
+    <form action="Operadores_relacionales.php" method="post">
     valor A:
     <input type="text" name="valorA" id="">
     <br/>
