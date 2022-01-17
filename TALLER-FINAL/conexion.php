@@ -8,6 +8,4 @@ $contrasenia="";
     $conexion = new PDO("mysql:host=$servidor;dbname=datos", $usuario, $contrasenia);
     echo "Conexion establecida";
 
-
-
 ?>
