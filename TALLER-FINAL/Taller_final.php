@@ -23,7 +23,7 @@
     <?php
         if(isset($_POST['id']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['direccion']) && isset($_POST['edad']))
     
-        require_once "conexion.php";
+        require_once 'conexion.php';
     ?>
 
 </body>
