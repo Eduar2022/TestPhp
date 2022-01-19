@@ -20,11 +20,13 @@
     <br/>
     <input type="submit" name ="enviar" value="Enviar">
     </form>
-    <?php
-        /*if(isset($_POST['id']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['direccion']) && isset($_POST['edad']))
-    
-        require_once 'conexion.php';*/
-    ?>
+    <form action="Mostrar_datos.php" method="get">
+    <input type="submit" value="Mostrar datos">
+    </form>
+    <form action="Mostrar_por_id.php" method="get">
+    <label for="uname">Id: </label><input type="text" name="idUsuario" id="">
+    <input type="submit" value="Buscar">
+    </form>
 
 </body>
 </html>
