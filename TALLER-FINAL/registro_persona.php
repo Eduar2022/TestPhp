@@ -25,8 +25,6 @@ $consulta->bindParam(':apellidoM', $apellidoM);
 $consulta->bindParam(':direccionM', $direccionM);
 $consulta->bindParam(':edad', $edad);
 
-
-
    if ($edad>30){
         echo "Edad mayor a 30";
    }else if(strlen($nombre)>64 || strlen($apellido)>64){
