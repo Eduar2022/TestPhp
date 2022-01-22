@@ -1,26 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <?php
-require_once 'conexion.php';
-?>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Direccion</th>
-            <th>Edad</th>
-        </tr>
-</thead>
-</table>
+require_once 'conexion.php';    
 
-</body> 
-</html>
+$code = filter_input(INPUT_GET, 'idUsuario', FILTER_SANITIZE_STRING);
+
+$statement = $conexion->prepare("SELECT * FROM personas WHERE id = :code");
+$statement->bindValue(':code', $code, PDO::PARAM_STR);
+$statement->execute();
+
+$result = $statement->fetch(PDO::FETCH_ASSOC);
+
+$numeroRandom = rand(1,3);
+$edadSumada = $result["edad"] + $numeroRandom;
+
+$direccion= $result["direccion"];
+$lendirec = strlen($direccion);
+
+$nombreM = strtolower($result["nombre"]);
+$primDireccion1 = substr($result["direccion"], 0, 1);
+$primDireccion2 = substr($result["direccion"], -1);
+$primDireccion3 = substr($result["direccion"], 1, $lendirec -2);
+$direccionMin = strtolower($primDireccion1);
+$direccionMin2 = strtolower($primDireccion2);
+
+echo $nombreM."/".$result["apellido"]."¡"."ID->".$result["id"]."(".$edadSumada.")"."&&".$direccionMin.$primDireccion3.$direccionMin2;
+
+
+/*if (isset($_GET['buscar'])){
+    $busqueda = $_GET['idUsuario'];
+    $consulta = $conexion->prepare("SELECT * FROM personas WHERE id LIKE '%$busqueda%'");
+    while ($row = $consulta->fetchAll()){
+        echo $row['id'];
+    }
+}*/
+
+?>

@@ -24,8 +24,8 @@
     <input type="submit" value="Mostrar datos">
     </form>
     <form action="Mostrar_por_id.php" method="get">
-    <label for="uname">Id: </label><input type="text" name="idUsuario" id="">
-    <input type="submit" value="Buscar">
+    <label for="uname">Id: </label><input type="text" name="idUsuario">
+    <button type="submit">Buscar</button>
     </form>
 
 </body>
